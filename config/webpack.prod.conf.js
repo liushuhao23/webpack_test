@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-27 22:39:53
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-25 17:24:35
+ * @LastEditTime: 2021-10-25 20:20:17
  */
 
 const { merge } = require('webpack-merge');
@@ -19,23 +19,20 @@ module.exports = merge(base, {
   mode: 'production',
   optimization: {
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        test: /\.js(\?.*)?$/i, //匹配参与压缩的文件
-        parallel: true, //使用多进程并发运行
-        terserOptions: {
-          //Terser 压缩配置
-          output: { comments: false },
-        },
-        extractComments: true, //将注释剥离到单独的文件中
-      }),
-    ],
+    // minimizer: [
+    //   new TerserPlugin({
+    //     test: /\.js(\?.*)?$/i, //匹配参与压缩的文件
+    //     parallel: false, //使用多进程并发运行
+    //     terserOptions: {
+    //       //Terser 压缩配置
+    //       output: { comments: false },
+    //     },
+    //     extractComments: true, //将注释剥离到单独的文件中
+    //   }),
+    // ],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new webpack.DefinePlugin({
-      DEV: JSON.stringify('production'),
-    }),
     new MiniCssExtractPlugin({
       filename: 'css/bundle_[chunkhash:8].css',
     }),

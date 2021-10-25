@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-25 17:25:27
+ * @LastEditTime: 2021-10-25 20:28:21
  */
 import './public-path'
 import { createApp } from 'vue'
@@ -12,6 +12,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import '@/assets/css/reset.css'
 import '@cbim/design-system-antd-adapter/vue.less'
 import '@cbim/design-system-variable/index.css'
+import Antd from 'ant-design-vue'
 import App from './App.vue'
 import routes from './router'
 import '@/assets/font/iconfont.css'
@@ -35,7 +36,8 @@ function render(props: mountProps = { container: '', registry: { activeRule: '' 
     instance = createApp(App)
     instance
         .use(router)
-        .mount(container ? (container as any).querySelector('#app') : '#app')
+        .use(Antd)
+        .mount(container ? (container as any).querySelector('#root') : '#root')
 }
 // 独立运行时，直接挂载应用
 if (!window.__POWERED_BY_QIANKUN__) {

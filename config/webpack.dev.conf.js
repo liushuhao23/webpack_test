@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-27 22:39:53
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-04-29 17:22:28
+ * @LastEditTime: 2021-10-25 20:20:59
  */
 
 const { merge } = require('webpack-merge');
@@ -21,8 +21,8 @@ module.exports = merge(base, {
     hot: true,
   },
   plugins: [
-    new webpack.DefinePlugin({
-      DEV: JSON.stringify('dev'),
-    }),
+    // new webpack.DefinePlugin({
+    //   DEV: JSON.stringify('dev'),
+    // }),
   ],
 });

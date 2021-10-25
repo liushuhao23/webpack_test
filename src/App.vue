@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-09-26 16:25:25
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-25 17:37:58
+ * @LastEditTime: 2021-10-25 20:31:42
 -->
 <template>
     <a-layout style="height: 100%; padding: 0 20px">
@@ -26,6 +26,7 @@
 
 <script lang="ts">
 import { ref } from 'vue'
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
 
 export default {
     setup() {
@@ -54,7 +55,7 @@ export default {
 }
 </style>
 <style lang="less">
-#app {
+#root {
     width: 100%;
     max-height: 100%;
     height: 100%;
