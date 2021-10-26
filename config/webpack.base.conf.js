@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-25 17:47:13
+ * @LastEditTime: 2021-10-26 17:28:46
  */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -31,31 +31,34 @@ module.exports = {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+          // options: {
+          //   presets: ['@babel/preset-env', {"modules": "commonjs"}],
+          //   plugins: ["@babel/plugin-transform-runtime"]
+          // },
+        },
       },
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/, // 不编译node_modules下的文件
-        use:  [
+        use: [
           {
-              loader: 'ts-loader',
-              options: {
-                  // 指定特定的ts编译配置，为了区分脚本的ts配置
-                  configFile: path.resolve(__dirname, '../tsconfig.json'),
-                  appendTsSuffixTo: [/\.vue$/]
-              }
-          }
-      ]
+            loader: 'ts-loader',
+            options: {
+              // 指定特定的ts编译配置，为了区分脚本的ts配置
+              configFile: path.resolve(__dirname, '../tsconfig.json'),
+              appendTsSuffixTo: [/\.vue$/],
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
         use: [
-          NODE_ENV === 'development'? 'style-loader': {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          NODE_ENV === 'development'
+            ? 'style-loader'
+            : {
+                loader: MiniCssExtractPlugin.loader,
+              },
           'css-loader',
           'postcss-loader',
         ],
@@ -63,13 +66,26 @@ module.exports = {
       {
         test: /\.less$/,
         use: [
-          NODE_ENV === 'development'? 'style-loader': {
-            loader: MiniCssExtractPlugin.loader,
+          NODE_ENV === 'development'
+            ? 'style-loader'
+            : {
+                loader: MiniCssExtractPlugin.loader,
+              },
+          {
+            loader: 'css-loader',
           },
-          'css-loader',
-          'less-loader',
-          'postcss-loader',
-        ],
+          {
+            loader: 'less-loader',
+            options: {
+              lessOptions: {
+                javascriptEnabled: true, //允许链式调用的换行
+              }
+            }
+          },
+          {
+            loader: 'postcss-loader',
+          },
+        ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
@@ -79,11 +95,11 @@ module.exports = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
       },
-    ],
+    ]
   },
   resolve: {
     alias: {
-        '@':  path.resolve(__dirname, 'src/'),
+      '@': path.resolve(__dirname, '/src'),
     },
     extensions: [
       '.tsx',
@@ -101,10 +117,10 @@ module.exports = {
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html',
-      minify: {
-        collapseWhitespace: true, // 移除空格
-        removeComments: true, // 移除注释
-      },
+      // minify: {
+      //   collapseWhitespace: true, // 移除空格
+      //   removeComments: true, // 移除注释
+      // },
       title: 'webpack5+vue',
     }),
   ],

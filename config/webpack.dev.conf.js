@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-27 22:39:53
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-25 20:20:59
+ * @LastEditTime: 2021-10-26 10:04:34
  */
 
 const { merge } = require('webpack-merge');
@@ -15,9 +15,12 @@ const path = require('path');
 module.exports = merge(base, {
   mode: 'development',
   devServer: {
-    contentBase: path.resolve(__dirname, '../dist'),
+    static: {
+      publicPath: '/',
+    },
+    // contentBase: path.resolve(__dirname, '../dist'),
     port: 8080,
-    publicPath: '/',
+    open: true,
     hot: true,
   },
   plugins: [

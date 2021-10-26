@@ -5,9 +5,9 @@ import { Ref } from 'vue'
  * @Autor: liushuhao
  * @Date: 2021-10-09 09:35:10
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-21 09:29:10
+ * @LastEditTime: 2021-10-26 10:13:42
  */
-import { Taglist } from '@/type/tag'
+
 /**
  * @description: 深拷贝数组依赖方法
  * @param {any} target
@@ -89,7 +89,7 @@ const init = (columns, dataSource): any => {
  * @return {*}
  * @author: liushuhao
  */
-const updateTable = (dataCheckData: Ref<Taglist>, colList: Ref<any>, dataNameArr: Ref<any>, columns: Ref<any>, dataSource: Ref<any>) => {
+const updateTable = (dataCheckData: Ref<any>, colList: Ref<any>, dataNameArr: Ref<any>, columns: Ref<any>, dataSource: Ref<any>) => {
     const dataCheckDataCopy = deepClone(dataCheckData.value)
     const colListCopy = deepClone(colList.value)
     const dataNameArrCopy = deepClone(dataNameArr.value)
