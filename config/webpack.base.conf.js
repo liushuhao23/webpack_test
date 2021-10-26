@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-26 17:28:46
+ * @LastEditTime: 2021-10-26 17:52:18
  */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -31,10 +31,6 @@ module.exports = {
         test: /\.js$/,
         use: {
           loader: 'babel-loader',
-          // options: {
-          //   presets: ['@babel/preset-env', {"modules": "commonjs"}],
-          //   plugins: ["@babel/plugin-transform-runtime"]
-          // },
         },
       },
       {
