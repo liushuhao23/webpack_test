@@ -4,13 +4,12 @@
  * @Autor: liushuhao
  * @Date: 2021-03-27 22:39:53
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-26 10:04:34
+ * @LastEditTime: 2021-10-27 10:15:23
  */
 
 const { merge } = require('webpack-merge');
 const base = require('./webpack.base.conf');
 const webpack = require('webpack');
-const path = require('path');
 
 module.exports = merge(base, {
   mode: 'development',

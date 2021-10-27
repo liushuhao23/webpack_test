@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-26 17:52:18
+ * @LastEditTime: 2021-10-27 10:17:19
  */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -25,10 +25,12 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         use: ['vue-loader'],
       },
       {
         test: /\.js$/,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         use: {
           loader: 'babel-loader',
         },
@@ -49,6 +51,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         use: [
           NODE_ENV === 'development'
             ? 'style-loader'
@@ -61,6 +64,7 @@ module.exports = {
       },
       {
         test: /\.less$/,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         use: [
           NODE_ENV === 'development'
             ? 'style-loader'
@@ -77,18 +81,17 @@ module.exports = {
                 javascriptEnabled: true, //允许链式调用的换行
               }
             }
-          },
-          {
-            loader: 'postcss-loader',
-          },
+          }
         ]
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         type: 'asset/resource',
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        // exclude: /node_modules/, // 不编译node_modules下的文件
         type: 'asset/resource',
       },
     ]
