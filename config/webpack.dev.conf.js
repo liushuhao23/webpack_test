@@ -4,14 +4,16 @@
  * @Autor: liushuhao
  * @Date: 2021-03-27 22:39:53
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-27 10:15:23
+ * @LastEditTime: 2021-10-29 17:51:55
  */
 
 const { merge } = require('webpack-merge');
 const base = require('./webpack.base.conf');
 const webpack = require('webpack');
+const SpeedMeasurePlugin=require('speed-measure-webpack-plugin')
+const smp = new SpeedMeasurePlugin();
 
-module.exports = merge(base, {
+module.exports = merge(base, smp.wrap({
   mode: 'development',
   devServer: {
     static: {
@@ -27,4 +29,4 @@ module.exports = merge(base, {
     //   DEV: JSON.stringify('dev'),
     // }),
   ],
-});
+}));

@@ -4,15 +4,17 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-27 10:17:19
+ * @LastEditTime: 2021-10-29 18:07:10
  */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader/dist/index');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const WebpackBar = require('webpackbar');
 const NODE_ENV = process.env.NODE_ENV;
 
-module.exports = {
+
+module.exports ={
   mode: 'development',
   entry: path.resolve(__dirname, '../src/main.ts'),
   output: {
@@ -20,20 +22,23 @@ module.exports = {
     path: path.resolve(__dirname, '../dist'),
     clean: true,
   },
-
+  stats: 'errors-only',
   module: {
     rules: [
+      {
+        test: /\.js$/,
+        exclude: /node_modules/, // 不编译node_modules下的文件
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
+        }
+      },
       {
         test: /\.vue$/,
         // exclude: /node_modules/, // 不编译node_modules下的文件
         use: ['vue-loader'],
-      },
-      {
-        test: /\.js$/,
-        // exclude: /node_modules/, // 不编译node_modules下的文件
-        use: {
-          loader: 'babel-loader',
-        },
       },
       {
         test: /\.(ts|tsx)$/,
@@ -59,7 +64,6 @@ module.exports = {
                 loader: MiniCssExtractPlugin.loader,
               },
           'css-loader',
-          'postcss-loader',
         ],
       },
       {
@@ -113,6 +117,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new WebpackBar(),
     new htmlWebpackPlugin({
       template: path.resolve(__dirname, '../index.html'),
       filename: 'index.html',
