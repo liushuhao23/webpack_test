@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-29 18:07:10
+ * @LastEditTime: 2021-10-30 18:37:24
  */
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
@@ -102,7 +102,7 @@ module.exports ={
   },
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '/src'),
+      '@': path.resolve(__dirname, '../src'),
     },
     extensions: [
       '.tsx',
