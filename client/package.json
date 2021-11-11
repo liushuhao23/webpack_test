@@ -4,7 +4,7 @@
   "description": "webpack5 + vue3 + ts + koa  测试",
   "main": "index.js",
   "scripts": {
-    "serve": "cross-env NODE_ENV=development webpack serve --config ./config/webpack.dev.conf.js",
+    "serve": "cross-env NODE_ENV=development node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.conf.js"
   },

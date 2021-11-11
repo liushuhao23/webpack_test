@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-11 15:44:19
+ * @LastEditTime: 2021-11-11 23:34:17
  */
 const path = require('path')
 const htmlWebpackPlugin = require('html-webpack-plugin')
@@ -19,7 +19,7 @@ module.exports = {
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, '../dist'),
-        clean: true
+        publicPath: '/'
     },
     stats: 'errors-only',
     module: {
@@ -109,7 +109,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new WebpackBar(),
         new htmlWebpackPlugin({
-            template: path.resolve(__dirname, '../index.html'),
+            template: path.resolve(__dirname, '../public/index.html'),
             filename: 'index.html',
             // minify: {
             //   collapseWhitespace: true, // 移除空格
