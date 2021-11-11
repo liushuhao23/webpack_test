@@ -1,10 +1,10 @@
 /*
- * @Description: 
+ * @Description:
  * @Version: 2.0
  * @Autor: liushuhao
  * @Date: 2021-10-26 10:09:14
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-10-26 10:09:15
+ * @LastEditTime: 2021-11-11 15:11:55
  */
 if (window.__POWERED_BY_QIANKUN__) {
     // 动态设置 webpack publicPath，防止资源加载出错
