@@ -1,17 +1,19 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: liushuhao
+ * @Date: 2021-11-11 15:09:43
+ * @LastEditors: liushuhao
+ * @LastEditTime: 2021-11-15 11:20:30
+ */
 module.exports = {
     root: true,
     env: {
-        node: true,
+        node: true
     },
-    extends: [
-        'plugin:vue/vue3-essential',
-        'eslint:recommended',
-        '@vue/typescript/recommended',
-        '@vue/prettier',
-        '@vue/prettier/@typescript-eslint',
-    ],
+    extends: ['plugin:vue/vue3-essential', 'eslint:recommended', '@vue/typescript/recommended', '@vue/prettier', '@vue/prettier/@typescript-eslint'],
     parserOptions: {
-        ecmaVersion: 2020,
+        ecmaVersion: 2020
     },
     rules: {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -30,6 +32,6 @@ module.exports = {
         'no-undef': 'off',
         'no-sparse-arrays': 0,
         'vue/comment-directive': 'off',
-        semi: [2, 'never'],
-    },
+        semi: [2, 'never']
+    }
 }
