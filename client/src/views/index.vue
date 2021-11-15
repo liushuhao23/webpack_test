@@ -4,11 +4,12 @@
  * @Autor: liushuhao
  * @Date: 2021-10-25 17:17:33
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-11 15:12:46
+ * @LastEditTime: 2021-11-15 16:30:15
 -->
 <template>
     <div class="index">
-        <a-table class="table" :data-source="data" :scroll="scroll" tableLayout="fixed" :pagination="false" rowClassName="rowClass">
+        <button @click="goOther">确三生zsssz世定</button>
+        <a-table class="table" :data-source="data" :scroll="scroll" tableLayout="fixed" :pagination="false">
             <a-table-column v-for="item in title" :key="item.value" :data-index="item.value">
                 <template #title>
                     <div class="table_title">
@@ -36,6 +37,7 @@ export default {
         const scroll = reactive({
             x: true
         })
+        const route = useRouter()
         const title = reactive([
             {
                 title: '方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5',
@@ -326,10 +328,14 @@ export default {
                 ]
             }
         ]
+        const goOther = (): void => {
+            route.push({ path: '/testCom' })
+        }
         return {
             data,
             title,
-            scroll
+            scroll,
+            goOther
         }
     }
 }

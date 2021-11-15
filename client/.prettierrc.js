@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: liushuhao
+ * @Date: 2021-11-11 15:10:49
+ * @LastEditors: liushuhao
+ * @LastEditTime: 2021-11-15 16:35:56
+ */
 module.exports = {
     tabWidth: 4,
     useTabs: false, // 使用tab（制表符）缩进而非空格
@@ -8,5 +16,6 @@ module.exports = {
     bracketSpacing: true, // 花括号前后空格
     jsxBracketSameLine: false, // 使多行JSX元素最后一行末尾的 > 单独一行
     arrowParens: 'avoid', //只有一个参数的箭头函数的参数是否带圆括号（默认avoid不带）
-    htmlWhitespaceSensitivity: 'ignore' //  HTML 文件空格敏感度
+    htmlWhitespaceSensitivity: 'ignore', //  HTML 文件空格敏感度
+    endOfLine: 'auto'
 }
