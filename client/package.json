@@ -10,6 +10,19 @@
   },
   "author": "",
   "license": "ISC",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/*.{js,jsx,ts,tsx,md,html,css,scss,vue}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@cbim/app-communication-protocol": "^0.0.1-alpha.8",
     "@cbim/design-system-antd-adapter": "latest",
