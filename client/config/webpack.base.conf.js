@@ -21,7 +21,6 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/'
     },
-    stats: 'errors-only',
     module: {
         rules: [
             {

@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-15 16:32:55
+ * @LastEditTime: 2021-11-15 17:57:41
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -14,19 +14,22 @@ var history = require('connect-history-api-fallback')
 
 const app = express()
 const config = require('./config/webpack.dev.conf')
+
 const compiler = webpack(config)
 
 app.use(history())
 
 app.use(
     webpackDevMiddleware(compiler, {
-        publicPath: config.output.publicPath
+        publicPath: config.output.publicPath,
+        quiet: true
     })
 )
 app.use(
     webpackHotMiddleware(compiler, {
         path: '/__webpack_hmr',
-        heartbeat: 10 * 1000
+        heartbeat: 10 * 1000,
+        log: false
     })
 )
 
