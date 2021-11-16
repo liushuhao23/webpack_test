@@ -4,9 +4,10 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-15 15:43:02
+ * @LastEditTime: 2021-11-16 14:22:56
  */
 const path = require('path')
+const { name } = require('../package');
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -19,13 +20,15 @@ module.exports = {
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, '../dist'),
-        publicPath: '/'
+        publicPath: '/',
+        library: `${name}-[name]`,
+        libraryTarget: 'umd', // 把微应用打包成 umd 库格式
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /node_modules/, // 不编译node_modules下的文件
+                // exclude: /node_modules/, // 不编译node_modules下的文件
                 use: {
                     loader: 'babel-loader',
                     options: {

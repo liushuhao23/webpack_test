@@ -60,6 +60,7 @@
     "express": "^4.17.1",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^5.4.0",
+    "http-proxy-middleware": "^2.0.1",
     "husky": "^4.2.5",
     "koa": "^2.13.4",
     "koa-convert": "^2.0.0",

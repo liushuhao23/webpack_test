@@ -4,13 +4,14 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-15 21:39:23
+ * @LastEditTime: 2021-11-16 15:29:08
  */
 const express = require('express')
 const webpack = require('webpack')
 const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const history = require('connect-history-api-fallback')
+// import { createProxyMiddleware } from 'http-proxy-middleware'
 
 const app = express()
 const config = require('./config/webpack.dev.conf')
@@ -18,12 +19,15 @@ const config = require('./config/webpack.dev.conf')
 const compiler = webpack(config)
 
 app.use(history())
-
+// app.use(createProxyMiddleware())
 app.use(
     webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
         quiet: true,
-        stats: 'errors-only'
+        stats: 'errors-only',
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+          }
     })
 )
 app.use(
@@ -33,7 +37,7 @@ app.use(
         log: false
     })
 )
-// 将文件 serve 到 port 3000。
-app.listen(3000, function () {
+// 将文件 serve 到 port 3001。
+app.listen(3001, function () {
     console.log('app listening on port 3000!\n')
 })
