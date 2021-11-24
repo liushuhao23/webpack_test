@@ -4,11 +4,11 @@
  * @Autor: liushuhao
  * @Date: 2021-10-25 17:17:33
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-15 16:30:15
+ * @LastEditTime: 2021-11-24 11:25:21
 -->
 <template>
     <div class="index">
-        <button @click="goOther">确三生zsssz世定</button>
+        <button @click="goOther">确三生世定</button>
         <a-table class="table" :data-source="data" :scroll="scroll" tableLayout="fixed" :pagination="false">
             <a-table-column v-for="item in title" :key="item.value" :data-index="item.value">
                 <template #title>

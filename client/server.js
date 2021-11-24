@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-23 17:24:41
+ * @LastEditTime: 2021-11-24 11:22:27
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -16,26 +16,23 @@ const cors = require('cors')
 
 const app = express()
 const config = require('./config/webpack.dev.conf')
-
 const compiler = webpack(config)
-// request.getHeader("Origin"));
+app.use(
+    cors({
+        origin: 'http://localhost:4000',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        preflightContinue: false,
+        optionsSuccessStatus: 204,
+        credentials: true
+    })
+)
 
-app.use(cors({
-    "origin": 'http://localhost:4000',
-    "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-    "preflightContinue": false,
-    "optionsSuccessStatus": 204,
-    "credentials": true
-}))
 app.use(history())
 app.use(
     webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
         quiet: true,
         stats: 'errors-only',
-        headers: {
-            'Access-Control-Allow-Origin': '*'
-        }
     })
 )
 app.use(
