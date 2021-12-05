@@ -17,6 +17,7 @@ const NODE_ENV = process.env.NODE_ENV
 module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, '../src/main.ts'),
+    
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, '../dist'),
