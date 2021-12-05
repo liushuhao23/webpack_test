@@ -4,7 +4,11 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
+<<<<<<< HEAD
  * @LastEditTime: 2021-11-25 23:24:20
+=======
+ * @LastEditTime: 2021-11-24 11:22:27
+>>>>>>> aa953159eb2ede07a8447ddca237a32ee35da832
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -17,10 +21,7 @@ const Koa = require('koa');
 
 const app = express()
 const config = require('./config/webpack.dev.conf')
-
 const compiler = webpack(config)
-// request.getHeader("Origin"));
-
 app.use(
     cors({
         origin: 'http://localhost:4000',
@@ -30,14 +31,32 @@ app.use(
         credentials: true
     })
 )
+
+<<<<<<< HEAD
+app.use(
+    cors({
+        origin: 'http://localhost:4000',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        preflightContinue: false,
+        optionsSuccessStatus: 204,
+        credentials: true
+    })
+)
+=======
+app.use(history())
+>>>>>>> aa953159eb2ede07a8447ddca237a32ee35da832
 app.use(
     webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
         quiet: true,
+<<<<<<< HEAD
         stats: 'minimal',
         headers: {
             'Access-Control-Allow-Origin': '*'
         }
+=======
+        stats: 'errors-only',
+>>>>>>> aa953159eb2ede07a8447ddca237a32ee35da832
     })
 )
 app.use(
