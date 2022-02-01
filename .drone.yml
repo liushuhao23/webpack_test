@@ -4,12 +4,6 @@ type: docker
 name: web
 
 steps:
-- name: docker
-  image: python:alpine3.14
-  commands:
-#   -  docker pull python:alpine3.14
-
-
 - name: npm install
   image: node:12.13.0-alpine
   commands:
