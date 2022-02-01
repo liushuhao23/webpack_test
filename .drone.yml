@@ -13,3 +13,15 @@ steps:
   image: node:12.13.0-alpine
   commands:
   -  yarn build
+
+
+- name: rsync
+  image: drillster/drone-rsync
+  settings:
+    key:
+      from_secret: rsync_key
+    hosts:
+      - 81.70.252.37
+    source: ./dist
+    target: /root/vue_test
+    secrets: [ rsync_key ]
