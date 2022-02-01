@@ -3,20 +3,18 @@ kind: pipeline
 type: docker
 name: web
 
-
 steps:
 - name: docker
   image: python:alpine3.14
   commands:
   -  docker pull python:alpine3.14
 
-steps:
+
 - name: yarn
   image: node:alpine
   commands:
   -  npm install -g yarn
 
-steps:
 - name: npm install
   image: node:alpine
   commands:
