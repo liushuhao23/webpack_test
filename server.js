@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-12-09 21:51:58
+ * @LastEditTime: 2022-02-01 14:55:13
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -12,7 +12,7 @@ const webpackDevMiddleware = require('webpack-dev-middleware')
 const webpackHotMiddleware = require('webpack-hot-middleware')
 const history = require('connect-history-api-fallback')
 const cors = require('cors')
-const Koa = require('koa');
+const Koa = require('koa')
 // import { createProxyMiddleware } from 'http-proxy-middleware'
 
 const app = express()
@@ -33,7 +33,7 @@ app.use(
     webpackDevMiddleware(compiler, {
         publicPath: config.output.publicPath,
         quiet: true,
-        stats: 'errors-only',
+        stats: 'errors-only'
     })
 )
 app.use(
