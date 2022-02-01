@@ -18,10 +18,11 @@ steps:
 - name: rsync
   image: drillster/drone-rsync
   settings:
+    user: root
     key:
       from_secret: rsync_key
     hosts:
       - 81.70.252.37
-    source: ./dist
+    source: ./dist/*
     target: /root/vue_test
     secrets: [ rsync_key ]
