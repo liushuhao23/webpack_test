@@ -3,14 +3,9 @@ kind: pipeline
 type: docker
 name: web
 
+
 steps:
 - name: npm install
   image: node:alpine
   commands:
-  -  npm i --registry=https://registry.npm.taobao.org
-
-- name: frontend
-  image: node
-  commands:
-  - npm install
-  - npm run test
+  - cd client  npm i --registry=https://registry.npm.taobao.org
