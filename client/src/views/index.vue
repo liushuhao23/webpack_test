@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-10-25 17:17:33
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-24 11:25:21
+ * @LastEditTime: 2021-12-08 13:43:28
 -->
 <template>
     <div class="index">
@@ -31,6 +31,7 @@
 <script lang="ts">
 import { nextTick, reactive } from 'vue'
 import { useRouter } from 'vue-router'
+import { compose } from '../js/compose'
 
 export default {
     setup() {
@@ -38,299 +39,33 @@ export default {
             x: true
         })
         const route = useRouter()
-        const title = reactive([
-            {
-                title: '方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5',
-                value: 'age'
-            },
-            {
-                title: '方案研究阶段2',
-                value: 'firstName'
-            },
-            {
-                title: '方案研究阶段3',
-                value: 'lastName'
-            },
-            {
-                title: '方案研究阶段4',
-                value: 'address'
-            },
-            {
-                title: '方案研究阶段5',
-                value: 'tags'
-            },
-            {
-                title: '方案研究阶段6',
-                value: 'tagsss'
-            },
-            {
-                title: '方案研究阶段7',
-                value: 'tagsss'
-            },
-            {
-                title: '方案研究阶段8',
-                value: 'tagsss'
-            },
-            {
-                title: '方案研究阶段1',
-                value: 'age'
-            },
-            {
-                title: '方案研究阶段2',
-                value: 'firstName'
-            },
-            {
-                title: '方案研究阶段3',
-                value: 'lastName'
-            },
-            {
-                title: '方案研究阶段4',
-                value: 'address'
-            },
-            {
-                title: '方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5方案研究阶段5',
-                value: 'tags'
-            },
-            {
-                title: '方案研究阶段6',
-                value: 'tagsss'
-            },
-            {
-                title: '方案研究阶段7',
-                value: 'tagsss'
-            },
-            {
-                title: '方案研究阶段8',
-                value: 'tagsss'
-            }
-        ])
-        const data: any = [
-            {
-                key: '1',
-                firstName: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                lastName: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                age: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                address: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                tags: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ]
-            },
-            {
-                key: '1',
-                firstName: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                lastName: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                age: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                address: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ],
-                tags: [
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    },
-                    {
-                        name: 111,
-                        id: 2
-                    }
-                ]
-            }
-        ]
+        const title = reactive([])
+        const data: any = []
         const goOther = (): void => {
             route.push({ path: '/testCom' })
         }
+        const testArr = []
+        const a = async (ctx, next) => {
+            await next()
+            console.log(111, 'a')
+        }
+        const b = async (ctx, next) => {
+            console.log(222, 'b')
+            await next()
+            console.log(2222, 'b-1')
+        }
+        const c = async (ctx, next) => {
+            console.log(3333, 'c')
+            await next()
+            console.log(33333, 'c-1')
+        }
+        testArr.push(a)
+        testArr.push(b)
+        testArr.push(c)
+        const te = compose(testArr)
+        te(1, () => {
+            console.log('执行回调')
+        })
         return {
             data,
             title,

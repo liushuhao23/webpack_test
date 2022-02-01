@@ -4,10 +4,10 @@
  * @Autor: liushuhao
  * @Date: 2021-03-25 09:59:06
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-11-16 14:22:56
+ * @LastEditTime: 2021-12-08 13:51:51
  */
 const path = require('path')
-const { name } = require('../package');
+const { name } = require('../package')
 const htmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader/dist/index')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
@@ -17,13 +17,12 @@ const NODE_ENV = process.env.NODE_ENV
 module.exports = {
     mode: 'development',
     entry: path.resolve(__dirname, '../src/main.ts'),
-    
     output: {
         filename: 'js/[name].js',
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/',
         library: `${name}-[name]`,
-        libraryTarget: 'umd', // 把微应用打包成 umd 库格式
+        libraryTarget: 'umd' // 把微应用打包成 umd 库格式
     },
     module: {
         rules: [
