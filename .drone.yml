@@ -7,7 +7,7 @@ steps:
 - name: docker
   image: python:alpine3.14
   commands:
-  -  docker pull python:alpine3.14
+#   -  docker pull python:alpine3.14
 
 
 - name: yarn
