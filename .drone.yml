@@ -10,11 +10,6 @@ steps:
 #   -  docker pull python:alpine3.14
 
 
-- name: yarn
-  image: node:alpine
-  commands:
-  -  npm install -g yarn
-
 - name: npm install
   image: node:alpine
   commands:
