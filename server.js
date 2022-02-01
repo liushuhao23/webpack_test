@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2022-02-01 14:55:13
+ * @LastEditTime: 2022-02-01 15:52:26
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -52,5 +52,5 @@ app.use(history())
 //  })
 // 将文件 serve 到 port 3001。
 app.listen(3001, function () {
-    console.log('app listening on port 3000!\n')
+    console.log('app listening on port 3001!\n')
 })
