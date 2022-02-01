@@ -14,4 +14,4 @@ steps:
 - name: npm install
   image: node:alpine
   commands:
-  -  yarn install
+  -  yarn install --registry=https://registry.npm.taobao.org
