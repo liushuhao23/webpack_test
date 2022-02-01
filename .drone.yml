@@ -5,6 +5,12 @@ name: web
 
 
 steps:
+- name: docker
+  image: python:alpine3.14
+  commands:
+  -  docker pull python:alpine3.14
+
+steps:
 - name: yarn
   image: node:alpine
   commands:
