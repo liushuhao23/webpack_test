@@ -1,0 +1,17 @@
+---
+kind: pipeline
+type: docker
+name: web
+
+
+steps:
+- name: yarn
+  image: node:alpine
+  commands:
+  -  npm install -g yarn
+
+steps:
+- name: npm install
+  image: node:alpine
+  commands:
+  -  yarn install --registry=https://registry.npm.taobao.org

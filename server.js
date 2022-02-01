@@ -4,7 +4,7 @@
  * @Autor: liushuhao
  * @Date: 2021-11-12 09:16:03
  * @LastEditors: liushuhao
- * @LastEditTime: 2021-12-08 13:51:47
+ * @LastEditTime: 2022-02-01 18:28:20
  */
 const express = require('express')
 const webpack = require('webpack')
@@ -13,12 +13,12 @@ const webpackHotMiddleware = require('webpack-hot-middleware')
 const history = require('connect-history-api-fallback')
 const cors = require('cors')
 const Koa = require('koa')
-const devProxyOptions = require('./config/httpProxy')
-const devProxyConfig = require('./config/httpProxyConfig')
+// import { createProxyMiddleware } from 'http-proxy-middleware'
+
 const app = express()
 const config = require('./config/webpack.dev.conf')
 const compiler = webpack(config)
-devProxyConfig(devProxyOptions, app)
+// devProxyConfig(devProxyOptions, app)
 app.use(
     cors({
         origin: 'http://localhost:4000',
@@ -48,5 +48,5 @@ app.use(history())
 
 // 将文件 serve 到 port 3001。
 app.listen(3001, function () {
-    console.log('app listening on port 3000!\n')
+    console.log('app listening on port 3001!\n')
 })
