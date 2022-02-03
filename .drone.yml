@@ -19,7 +19,7 @@ steps:
   settings:
     host: 59.110.227.202
     username: root
-    password: qbwagx5liu
+    password: Qbwagx5liu
     port: 22
     target: /root/vue_test
     source: ./dist/*
