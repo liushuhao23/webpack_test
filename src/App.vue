@@ -14,7 +14,7 @@
                     <template #renderEmpty>
                         <div style="text-align: center">
                             <img style="width: 100px" src="./assets/img/empty.png" alt="" />
-                            <p>暂无数据</p>
+                            <p>暂无数xx据</p>
                         </div>
                     </template>
                     <router-view />
