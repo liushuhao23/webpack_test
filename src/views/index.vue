@@ -8,7 +8,7 @@
 -->
 <template>
     <div class="index">
-        <button @click="goOther">确三生世XXXXxmmxxmmx定</button>
+        <button @click="goOther">确三生zs世XXXXxmmxxmmx定</button>
         <a-table class="table" :data-source="data" :scroll="scroll" tableLayout="fixed" :pagination="false">
             <a-table-column v-for="item in title" :key="item.value" :data-index="item.value">
                 <template #title>
