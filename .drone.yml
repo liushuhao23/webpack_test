@@ -14,14 +14,12 @@ steps:
   commands:
   -  yarn build
 
-- name: rsync
-  image: drillster/drone-rsync
+- name: scp
+  image: appleboy/drone-scp
   settings:
-    user: root
-    key:
-      from_secret: rsync_key
-    hosts:
-      - 59.110.227.202
-    source: ./dist/*
+    host: 59.110.227.202
+    username: root
+    password: qbwagx5liu
+    port: 22
     target: /root/vue_test
-    secrets: [ rsync_key ]
+    source: ./dist/*
