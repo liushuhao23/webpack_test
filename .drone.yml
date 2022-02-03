@@ -3,6 +3,7 @@ kind: pipeline
 type: docker
 name: web
 
+steps:
 - name: npm install
   image: node:12.13.0-alpine
   commands:
