@@ -16,9 +16,9 @@ steps:
 
 - name: rsync
   image: drillster/drone-rsync
- environment:
+  environment:
     RSYNC_KEY:
-    from_secret: rsync_key
+     from_secret: rsync_key
   settings:
     user: root
     hosts:
