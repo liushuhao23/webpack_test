@@ -15,7 +15,7 @@ steps:
       path: /root/.ssh
   commands:
   -  echo $DRONE_GIT_SSH_URL
-  -  git clone $DRONE_GIT_SSH_URL .
+  -  git clone $DRONE_GIT_SSH_URL
 
 - name: npm install
   image: node:12.13.0-alpine
