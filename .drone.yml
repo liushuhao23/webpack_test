@@ -14,14 +14,14 @@ steps:
   commands:
   -  yarn build
 
-- name: rsync
-  image: drillster/drone-rsync
-  settings:
-    user: root
-    key:
-      from_secret: rsync_key
-    hosts:
-      - 59.110.227.202
-    source: ./dist/*
-    target: /root/vue_test
-    secrets: [ rsync_key ]
+# - name: rsync
+#   image: drillster/drone-rsync
+#   settings:
+#     user: root
+#     key:
+#       from_secret: rsync_key
+#     hosts:
+#       - 59.110.227.202
+#     source: ./dist/*
+#     target: /root/vue_test
+#     secrets: [ rsync_key ]
