@@ -11,7 +11,7 @@ steps:
   pull: if-not-exists
   image: alpine/git
   volumes:
-    - name: sshkeys
+    -name: sshkeys
     path: /root/.ssh
   commands:
   - echo $DRONE_GIT_SSH_URL
