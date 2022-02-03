@@ -22,7 +22,7 @@ steps:
     key:
       from_secret: rsync_key
     hosts:
-      - 81.70.252.37
+      - 59.110.227.202
     source: ./dist/*
     target: /root/vue_test
     secrets: [ rsync_key ]
