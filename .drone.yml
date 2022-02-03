@@ -3,7 +3,20 @@ kind: pipeline
 type: docker
 name: web
 
+clone:
+  disable: true
+
 steps:
+- name: clone
+  pull: if-not-exists
+  image: alpine/git
+  volumes:
+    - name: sshkeys
+    path: /root/.ssh
+  commands:
+  - echo $DRONE_GIT_SSH_URL
+  - git clone $DRONE_GIT_SSH_URL .
+
 - name: npm install
   image: node:12.13.0-alpine
   commands:
