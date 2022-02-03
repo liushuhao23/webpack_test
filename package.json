@@ -6,7 +6,8 @@
   "scripts": {
     "serve": "cross-env NODE_ENV=development node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.conf.js"
+    "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.prod.conf.js",
+    "deploy": "node script/deploy.js"
   },
   "author": "",
   "license": "ISC",
@@ -80,6 +81,8 @@
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",
     "prettier": "^2.2.1",
+    "rsync": "^0.6.1",
+    "shelljs": "^0.8.5",
     "speed-measure-webpack-plugin": "^1.5.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.2.6",
